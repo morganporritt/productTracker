@@ -1,0 +1,28 @@
+<section data-ng-controller="ProductsController" data-ng-init="findOne()">
+	<div class="pull-right">
+		<a class="btn btn-primary" href="/#!/products/{{product._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<div class="page-header">
+		<h1 data-ng-bind="product.name"></h1>
+	</div>
+	<div>
+	    <h5>Category: <span>{{ product.category.name }}</span></h5>
+	</div>
+	<div>
+	    <h5>Unit price: <span>${{ product.unitPrice }}</span></h5>
+	</div>
+	<div>
+	    <h5>Units in stock: <span>{{ product.unitsInStock }}</span></h5>
+	</div>
+	<div>
+	    <h5>Units on order: <span>{{ product.unitsOnOrder }}</span></h5>
+	</div>
+	<div>
+	    <h5>Discontinued: <span>{{ product.discontinued }}</span></h5>
+	</div>
+</section>
