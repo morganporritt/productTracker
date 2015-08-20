@@ -135,11 +135,11 @@ module.exports = function(grunt) {
 				require: 'server.js'
 			}
 		},
-		karma: {
-			unit: {
-				configFile: 'karma.conf.js'
-			}
-		}
+		// karma: {
+		// 	unit: {
+		// 		configFile: 'karma.conf.js'
+		// 	}
+		// }
 	});
 
 	// Load NPM tasks
@@ -176,8 +176,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('test-server', ['env:test', 'mochaTest']);
 
 	// Client tests task.
-	grunt.registerTask('test-client', ['env:test', 'karma:unit']);
+	// grunt.registerTask('test-client', ['env:test', 'karma:unit']);
 
 	// Test task.
-	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+	// grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+	grunt.registerTask('test', ['env:test', 'mochaTest']);
 };
