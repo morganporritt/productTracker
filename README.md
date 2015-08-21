@@ -1,5 +1,10 @@
 # Product Tracker
+https://products.morganporritt.com
+
 > This project is for an independent study that I did on the MEAN stack.  It utilizes all of the technologies in the MEAN stack (MongoDB, Express.js, Angular.js, and Node.js).
+
+## API Documentation
+https://api.products.morganporritt.com
 
 ## Installation
 Make sure that you have node, mongodb, and grunt installed globally.
