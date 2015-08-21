@@ -1,0 +1,5 @@
+{
+  "name": "Product Tracker API",
+  "version": "0.1.0",
+  "description": "All of the Node API calls. These can be used by the front end to communicate with Node."
+}

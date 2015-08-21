@@ -15,6 +15,25 @@ var _ = require('lodash'),
 
 /**
  * Forgot for reset password (forgot POST)
+ *
+ * @api {post} /auth/forgot Forgot Password
+ * @apiName forgot
+ * @apiGroup User
+ *
+ * @apiParam{String} username Username that user would like to use to log in with
+ * 
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *          "message" : "An email has been sent to morgan@porritt.com with further instructions."
+ *      }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "message": "error_message"
+ *     }
+ *
  */
 exports.forgot = function(req, res, next) {
 	async.waterfall([
@@ -186,6 +205,27 @@ exports.reset = function(req, res, next) {
 
 /**
  * Change Password
+ *
+ * @api {post} /users/password Change Password
+ * @apiName password
+ * @apiGroup User
+ *
+ * @apiParam{String} currentPassword Current Password
+ * @apiParam{String} newPassword New Password
+ * @apiParam{String} verifyPassword Verify New Password
+ * 
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *          "message" : "Password changed successfully"
+ *      }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "message": "error_message"
+ *     }
+ *
  */
 exports.changePassword = function(req, res) {
 	// Init Variables

@@ -26,7 +26,7 @@ var CategorySchema = new Schema({
 		trim: true, 	
 		unique : true,
 		required: 'name cannot be blank',
-		validate: [validation.len(15), 'name must be 15 chars in length or less']
+		validate: [validation.len(50), 'name must be 15 chars in length or less']
 	}
 });
 

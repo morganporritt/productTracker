@@ -11,6 +11,39 @@ var _ = require('lodash'),
 
 /**
  * Update user details
+ *
+ * @api {put} /users Update a User
+ * @apiName users
+ * @apiGroup User
+ *
+ * @apiParam{String} firstName First name of user
+ * @apiParam{String} lastName Last name of user
+ * @apiParam{String} email Email address of user
+ * @apiParam{String} username Username that user would like to use to log in with
+ * 
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *          "__v": 0,
+ *          "displayName": "Morgan Porritt",
+ *          "provider": "local",
+ *          "username": "morganporritt1",
+ *          "_id": "55d6d63bcda1435e7b5a77e1",
+ *          "created": "2015-08-21T07:41:47.210Z",
+ *          "roles": [
+ *              "user"
+ *          ],
+ *          "email": "morgan@porritt.com",
+ *          "lastName": "Porritt",
+ *          "firstName": "Morgan"
+ *      }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "message": "Error Message"
+ *     }
+ *
  */
 exports.update = function(req, res) {
 	// Init Variables
@@ -50,6 +83,34 @@ exports.update = function(req, res) {
 
 /**
  * Send User
+ *
+ * @api {get} /users/me Send User Information
+ * @apiName users/me
+ * @apiGroup User
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *          "__v": 0,
+ *          "displayName": "Morgan Porritt",
+ *          "provider": "local",
+ *          "username": "morganporritt1",
+ *          "_id": "55d6d63bcda1435e7b5a77e1",
+ *          "created": "2015-08-21T07:41:47.210Z",
+ *          "roles": [
+ *              "user"
+ *          ],
+ *          "email": "morgan@porritt.com",
+ *          "lastName": "Porritt",
+ *          "firstName": "Morgan"
+ *      }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "message": "Error Message"
+ *     }
+ *
  */
 exports.me = function(req, res) {
 	res.json(req.user || null);
